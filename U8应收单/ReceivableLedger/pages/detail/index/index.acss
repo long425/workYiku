@@ -1,0 +1,34 @@
+.detail-page {
+  background-image: url('/image/timg.jpg');
+  height: 100vh;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.order-item {
+  /* height: 100rpx; */
+  padding: 10rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  margin-bottom: 10rpx;
+  background-color: #fff;
+}
+.order-custom-name, .code-sum {
+  font-size: 14px;
+  line-height: 30px;
+}
+.code-sum {
+  display: flex;
+  justify-content: space-between;
+}
+.custom-code,.custom-money {
+  flex: 1;
+  text-align: left;
+}
+.info-title {
+  color: #a3a3a3;
+}
+.info-answer {
+  font-weight: 700;
+  color: #40a9ff;
+}

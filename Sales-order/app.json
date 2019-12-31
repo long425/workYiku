@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/add/add",
+    "pages/index/index",
+    "pages/order-detail/order-detail",
+    "pages/customer/customer",
+    "pages/search/search",
+    "pages/order-row-detail/order-row-detail"
+  ],
+  "window": {
+    "defaultTitle": "T+销售订单",
+    "titleBarColor": "#fff"
+  },
+  "tabBar": {
+    "textColor": "#dddddd",
+    "selectedColor": "#49a9ee",
+    "backgroundColor": "#ffffff",
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "icon": "image/icon_component.png",
+        "activeIcon": "image/icon_component_HL.png",
+        "name": "订单列表"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "icon": "image/icon_API.png",
+        "activeIcon": "image/icon_API_HL.png",
+        "name": "新增订单"
+      }
+    ]
+  }
+}

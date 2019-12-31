@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/index/ledger/ledger",
+    "pages/search/customer/customer",
+    "pages/detail/index/index"
+  ],
+  "window": {
+    "defaultTitle": "U8应收单",
+    "titleBarColor": "#fff"
+  }
+}

@@ -1,0 +1,17 @@
+<view class="page">
+  <view class="list" style="padding-top: 20rpx">
+    <view class="search-container" a:if="{{teamBySaleList.length == 0}}">
+      <view class="no-search-result"><image src="/image/icon/no_search_result.png" /><text>未找到销售组织，请联系管理员设置</text></view>
+    </view>
+    <block a:for="{{teamBySaleList}}" a:for-index="idx" a:for-item="itemName">
+      <list-item arrow="{{true}}" multipleLine="{{false}}"
+        data-code="{{itemName.vsalestrucode}}" 
+        data-name="{{itemName.vsalestruname}}"
+        onClick="checkTeamBySale"  
+        style="display: flex; align-items: center">
+        <text class="component-name">{{itemName.vsalestruname}}</text>
+        <view class="am-list-brief">{{itemName.vsalestrucode}}</view>
+      </list-item>
+    </block>
+  </view>
+</view>

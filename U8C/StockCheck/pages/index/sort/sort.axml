@@ -1,0 +1,14 @@
+<view class="stock-page">
+  <view class="list" style="padding-top: 20rpx">
+    <view class="sort-title">选择需要查看的存货分类</view>
+    <block a:for="{{sortList}}" a:for-index="idx" a:for-item="itemName">
+      <list-item arrow="{{true}}" multipleLine="{{false}}" scroll-y="{{true}}"
+        data-code="{{itemName.invclasscode}}" 
+        data-name="{{itemName.invclassname}}"
+        onClick="checkToSort"  
+        style="display: flex; align-items: center">
+        <text class="component-name">{{itemName.invclassname}}</text>
+      </list-item>
+    </block>
+  </view>
+</view>

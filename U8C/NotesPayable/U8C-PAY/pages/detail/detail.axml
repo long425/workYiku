@@ -1,0 +1,107 @@
+<view class="page detail-page">
+  <view style="color:#a9a9a9;margin-top:10rpx;margin-bottom: 20rpx;text-align:center;">单据表头</view>
+  <view class="header-card">
+    <view class="card-content">
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">单据编号：</text>
+          <text>{{headerData.djbh}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">制单日期：</text>
+          <text>{{headerData.djrq}}</text>
+        </view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-title"><text class="item-type">客商名称：</text><text>{{stockData[0].hbbm_name}}</text></view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">原币金额：</text>
+          <text>{{headerData.ybje}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">本币金额：</text>
+          <text>{{headerData.bbje}}</text>
+        </view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">交易类型：</text>
+          <text>{{headerData.ywbm_name}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">业务流程：</text>
+          <text>{{headerData.xslxbm_name}}</text>
+        </view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">录入人：</text>
+          <text>{{headerData.lrr_name}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">审批人：</text>
+          <text>{{headerData.shr_name}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style="color:#a9a9a9;margin-top:30rpx;margin-bottom: 20rpx;text-align:center;">明细行</view>
+  <block a:for="{{stockData}}">
+    <view class="header-card">
+    <view class="card-content">
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">币种名称：</text>
+          <text>{{item.bzbm_name}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">本币汇率：</text>
+          <text>{{item.bbhl}}</text>
+        </view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">借方原币金额：</text>
+          <text>{{item.jfybje}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">借方本币金额：</text>
+          <text>{{item.jfbbje}}</text>
+        </view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">借方原币税金：</text>
+          <text>{{item.jfybsj}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">借方本币税金：</text>
+          <text>{{item.jfbbsj}}</text>
+        </view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">借方原币无税金额：</text>
+          <text>{{item.jfybwsje}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">借方本币无税金额：</text>
+          <text>{{item.wbfbbje}}</text>
+        </view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">税率：</text>
+          <text>{{item.sl}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">摘要：</text>
+          <text>{{item.zy}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  </block>
+</view>

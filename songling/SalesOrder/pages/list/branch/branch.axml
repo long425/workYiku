@@ -1,0 +1,10 @@
+<view>
+  <view class="list" style="padding-top: 30rpx">
+    <block a:for="{{branchList}}" a:for-index="idx" a:for-item="itemName">
+      <list-item arrow="{{true}}" multipleLine="{{false}}" data-code="{{itemName.code}}" data-name="{{itemName.name}}" onClick="checkBranch" style="display: flex; align-items: center">
+        <text class="component-name">{{itemName.name}}</text>
+        <view class="am-list-brief">{{itemName.code}}</view>
+      </list-item>
+    </block>
+  </view>
+</view>

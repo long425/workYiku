@@ -1,0 +1,68 @@
+<view>
+  <!-- 订单状态选择器 -->
+  <view class="section" style="background-color:#fff;margin-bottom: 10rpx;padding:10rpx;">
+    <picker onChange="checkOrderState" value="{{arrIndex}}" range="{{stateArray}}" range-key="name">
+      <view class="row">
+        <view class="row-title">订单状态： </view>
+        <view class="row-extra" style="text-align: center;">{{stateArray[arrIndex].name}}</view>
+      </view>
+    </picker>
+  </view>
+  <!-- 日期选择器 -->
+  <view class="time-picker-box">
+    <view class="page-section first-time-picker">
+      <view class="page-section-demo">
+        <input class="choose-date-input" placeholder="起始订单日期" onFocus="checkStartDate" value="{{startDate}}"/>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="page-section-demo last-time-picker">
+        <input class="choose-date-input" placeholder="结束订单日期"  onFocus="checkEndDate" value="{{endDate}}"/>
+        <input value="{{orderState}}" style="display:none;"/>
+      </view>
+    </view>
+  </view>
+
+  <view>
+    <scroll-view scroll-y="{{isRoll}}" style="max-height: calc(100vh - 140px);margin-bottom: 40rpx;" onScroll="scroll" a:if="stockSearchResult.length">
+      <block a:for="{{orderList}}">
+        <view class="card-box" style="margin-bottom: 5px;">
+          <block a:if="{{verifyBtnIsShow}}">
+            <view data-orderId="{{item.code}}" onTap="seeOrderInfo">
+              <view class="order-text">
+                <text class="order-item order-name">{{item.cusname}}</text>
+              </view>
+              <view class="order-text">
+                <text class="order-item order-date">{{item.date}}</text>
+                <text class="order-item order-money">{{item.money}}</text>
+              </view>
+            </view>
+            <view class="buttun-box" a:if="{{item.state == 'Opening'}}">
+              <button  type="primary" data-orderId="{{item.code}}" onTap="checkToVerify">审核</button>
+            </view>
+            <view class="buttun-box" a:if="{{item.state == 'Approved'}}">
+              <button  type="default" data-orderId="{{item.code}}" disabled="true">已审核</button>
+            </view>
+            <block a:if="{{item.state == 'Closed'}}">
+              <view class="buttun-box">
+                <button size="mini" type="default" disabled="true">审核</button>
+                <button size="mini" type="default" disabled="true">弃审</button>
+              </view>
+            </block>
+          </block>
+          <block a:else>
+            <view data-orderId="{{item.code}}" onTap="seeOrderInfo">
+              <view class="order-text-staff">
+                <text class="order-item order-name">{{item.cusname}}</text>
+              </view>
+              <view class="order-text-staff">
+                <text class="order-item order-date">{{item.date}}</text>
+                <text class="order-item order-money">{{item.money}}</text>
+              </view>
+            </view>
+          </block>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

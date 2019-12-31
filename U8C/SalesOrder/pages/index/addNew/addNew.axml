@@ -1,0 +1,137 @@
+<view class="addnew-page page">
+    <scroll-view scroll-y="{{true}}" style="height: calc(100vh - 180rpx);">
+  <!-- 销售订单表头 -->
+  <view class="page-section">
+    <view class="row" onTap="getCustom">
+      <view class="row-title">客户
+        <text style="color: red;">*</text></view>
+      <view class="row-extra">{{parentvo.ccustomername}}</view>
+      <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+    </view>
+    <view class="form-line" />
+    <view class="row" onTap="getBranch">
+      <view class="row-title">部门
+        <text style="color: red;">*</text></view>
+      <view class="row-extra">{{parentvo.cdeptname}}</view>
+      <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+    </view>
+
+    <view class="form-line" />
+    <view class="row" onTap="getTeamBySale">
+      <view class="row-title">销售组织
+        <text style="color: red;">*</text></view>
+      <view class="row-extra">{{parentvo.csalecorpname}}</view>
+      <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+    </view>
+    <view class="form-line" />
+    <view class="row" onTap="getTeamByReserve">
+      <view class="row-title">库存组织
+        <text style="color: red;">*</text></view>
+      <view class="row-extra">{{parentvo.ccalbodyname}}</view>
+      <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+    </view>
+    <view class="form-line" />
+    <view class="form-row" onTap="chooseSendDate">
+      <view class="row-title">预发货日期</view>
+      <view class="row-extra">
+        <input class="input add-order-input" placeholder="请输入" value="{{parentvo.dconsigndate}}" data-name="dconsigndate" disabled="true"/>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="row-title">发货地址</view>
+      <view class="row-extra">
+        <input class="input add-order-input" placeholder="请输入" value="{{parentvo.vreceiveaddress}}" data-name="vreceiveaddress" onInput="changeHeaderValue"/>
+      </view>
+    </view>
+    <!-- <view class="form-line" />
+    <view class="form-row">
+      <view class="row-title">联系人</view>
+      <view class="row-extra">
+        <input class="input add-order-input" placeholder="请输入" value="{{orderHeader.ccusperson}}" data-name="ccusperson" onInput="changeHeaderValue"/>
+      </view>
+    </view> -->
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="row-title">税率</view>
+      <view class="row-extra">
+        <input class="input add-order-input" placeholder="默认税率16" value="{{parentvo.ntaxrate}}" data-name="ntaxrate" onInput="changeHeaderValue"/>
+      </view>
+    </view>
+    <!-- <view class="form-line" />
+    <view class="form-row">
+      <view class="row-title">整单金额</view>
+      <view class="row-extra">
+        <input class="input add-order-input" value="{{orderHeader.sum}}" data-name="sum"/>
+      </view>
+    </view> -->
+  </view>
+  <!-- 销售订单存货明细行 -->
+  <block a:for="{{childrenvo}}" a:for-index="idx" a:for-item="itemName">
+    <view style="margin-top: 30rpx;">
+      <view style="margin-bottom: 20rpx;margin-left:20rpx;">
+        <text style="color: #ccc;">订单明细({{idx + 1}})</text>
+        <text id="{{idx}}" onTap="deleteOrder" style="float:right;color:red;">删除</text>
+      </view>
+      <view class="page-section">
+        <view class="form-row">
+          <view class="row-title">存货名称<text style="color: red;">*</text></view>
+          <view class="row-extra">
+            <input class="input add-order-input" value="{{itemName.invname}}" data-name="invname" data-hi="{{idx}}" onInput="changeValueData"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="row-title">
+            <text>销售单位</text></view>
+          <view class="row-extra">
+            <input class="input add-order-input" disabled="true" value="{{itemName.measname}}" data-name="measname" data-hi="{{idx}}" onInput="changeValueData"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="row-title">数量
+            <text style="color: red;">*</text></view>
+          <view class="row-extra">
+            <input class="input add-order-input" placeholder="请输入" value="{{itemName.nnumber}}" data-name="nnumber" data-hi="{{idx}}" onInput="changeStockValue"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="row-title">
+            <text>无税单价</text></view>
+          <view class="row-extra">
+            <input class="input add-order-input" placeholder="请输入" value="{{itemName.noriginalcurprice}}" data-name="noriginalcurprice" data-hi="{{idx}}" onInput="changeStockValue"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="row-title">含税单价</view>
+          <view class="row-extra">
+            <input class="input add-order-input" placeholder="请输入" value="{{itemName.noriginalcurtaxprice}}" data-name="noriginalcurtaxprice" data-hi="{{idx}}" onInput="changeStockValue"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="row-title">
+            <text>无税金额</text></view>
+          <view class="row-extra">
+            <input class="input add-order-input" value="{{itemName.noriginalcurmny}}" data-name="noriginalcurmny" data-hi="{{idx}}"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="row-title">价税合计</view>
+          <view class="row-extra">
+            <input class="input add-order-input" value="{{itemName.noriginalcursummny}}" data-name="noriginalcursummny" data-hi="{{idx}}"/>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  </scroll-view>
+  <view class="buttonBox">
+    <button class="addnew-button" size="default" type="default" onTap="addNew">增加明细行</button>
+    <button class="addnew-button" type="primary" size="default" onTap="checkToInset">提交</button>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/team/team",
+    "pages/index/sort/sort",
+    "pages/index/list/list",
+    "pages/index/detail/detail",
+    "pages/index/search/search"
+  ],
+  "window": {
+    "defaultTitle": "库存查询"
+  }
+}

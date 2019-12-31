@@ -1,0 +1,81 @@
+page {
+  background-color: #eee;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.page-section-demo {
+  /* padding: 14rpx 0; */
+}
+
+.choose-date-input {
+  width: calc(100% - 20rpx)
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  padding: 0 10rpx;
+}
+
+.row-title {
+  padding-top: 18rpx;
+  padding-bottom: 18rpx;
+  width: 123px;
+  font-size: 16px;
+  color: #000;
+}
+
+.row-extra {
+  flex: 1;
+  flex-basis: initial;
+  font-size: 16px;
+  color: #000;
+}
+
+/* 订单卡片 */
+.order-card {
+  background-color: #fff;
+  padding: 10rpx;
+  margin-bottom: 10rpx;
+  line-height: 50rpx;
+  box-sizing: border-box;
+}
+.card-content {
+  margin-bottom: 20rpx;
+}
+.card-content-item {
+  display: flex;
+  justify-content: space-between;
+}
+.card-title,.card-date,.card-money {
+  flex: 1 1 50%;
+  text-align: left;
+  color: #1989fa;
+}
+.item-type {
+  color: #999;
+}
+.verify-btn {
+  height: 70rpx;
+  line-height: 70rpx;
+  margin: 0 auto;
+}
+
+/* 时间选择器 */
+.time-picker-box {
+  display: flex;
+  justify-content: space-between;
+}
+.page-section {
+  flex: 1;
+  text-align: center;
+}
+.first-time-picker {
+  margin-right: 5rpx;
+}
+.last-time-picker {
+  margin-left: 5rpx;
+}

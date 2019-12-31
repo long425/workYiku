@@ -1,0 +1,32 @@
+.page {
+  padding: 10rpx 20rpx;
+}
+
+/* 订单卡片 */
+.header-card {
+  background-color: #fff;
+  padding: 10rpx;
+  margin-bottom: 10rpx;
+  line-height: 50rpx;
+  box-sizing: border-box;
+}
+.card-content {
+  margin-bottom: 20rpx;
+}
+.card-content-item {
+  display: flex;
+  justify-content: space-between;
+}
+.card-title,.card-date,.card-money {
+  flex: 1 1 50%;
+  text-align: left;
+  color: #1989fa;
+}
+.item-type {
+  color: #999;
+}
+.verify-btn {
+  height: 70rpx;
+  line-height: 70rpx;
+  margin: 0 auto;
+}

@@ -1,0 +1,168 @@
+<view class="page">
+  <view class="page-section">
+    <view class="form-row">
+      <view class="form-row-label">仓库编号</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.whcode}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">仓库名称</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.whname}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">存货编号</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.invcode}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">存货名称</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.invname}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">存货分类代码</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.invccode}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">存货分类名称</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.invcname}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">批号</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.batch}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">现存数量</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.qty}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">冻结数量</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.stopqty}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">到货、在检数量</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.inqty}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">调拨在途数量</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.transinqty}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">预计入库数量合计</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.inqtysum}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">待发货数量</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.outqty}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">调拨待发数量</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.transoutqty}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">预计出库数量</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.outqtysum}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">不合格品数量</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.disableqty}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">可用数量</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.availqty}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">生产日期</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.mdate}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">失效日期</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.vdate}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">保质期</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.massdate}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">保质期单位</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.massunitname}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">有效期至</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.expirationdate}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">有效期推算方式</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{stockDetail.expiratdatecalcu}}</text>
+      </view>
+    </view>
+
+
+  </view>
+</view>
+
+

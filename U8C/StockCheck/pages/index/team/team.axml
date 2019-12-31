@@ -1,0 +1,14 @@
+<view class="stock-page">
+  <view class="list" style="padding-top: 20rpx">
+    <view class="sort-title">选择需要查看的存货组织</view>
+    <block a:for="{{teamList}}" a:for-index="idx" a:for-item="itemName">
+      <list-item arrow="{{true}}" multipleLine="{{false}}" scroll-y="{{true}}"
+        data-code="{{itemName.bodycode}}" 
+        data-name="{{itemName.bodyname}}"
+        onClick="checkToSort"  
+        style="display: flex; align-items: center">
+        <text class="component-name">{{itemName.bodyname}}</text>
+      </list-item>
+    </block>
+  </view>
+</view>

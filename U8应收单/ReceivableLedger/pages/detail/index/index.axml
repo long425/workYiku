@@ -1,0 +1,54 @@
+<view class="detail-page page">
+  <view class="page-section">
+    <view class="order-item">
+        <view class="order-custom-name">
+          <text class="info-title">应收单据号： </text>
+          <text class="info-answer">{{detail.code}}</text>
+        </view>
+        <view class="order-custom-name">
+          <text class="info-title">单据日期： </text>
+          <text class="info-answer">{{detail.date}}</text>
+        </view>
+        <view class="order-custom-name">
+          <text class="info-title">单据状态： </text>
+          <text class="info-answer">{{detail.state}}</text>
+        </view>
+        <view class="order-custom-name">
+          <text class="info-title">客商编码： </text>
+          <text class="info-answer">{{detail.cust_vendor_code}}</text>
+        </view>
+        <view class="order-custom-name">
+          <text class="info-title">客商名称： </text>
+          <text class="info-answer">{{detail.cusname}}</text>
+        </view>
+        <view class="order-custom-name">
+          <text class="info-title">部门编码： </text>
+          <text class="info-answer">{{detail.deptcode}}</text>
+        </view>
+        <view class="order-custom-name">
+          <text class="info-title">部门名称： </text>
+          <text class="info-answer">{{detail.deptname}}</text>
+        </view>
+        <view class="order-custom-name">
+          <text class="info-title">人员编码： </text>
+          <text class="info-answer">{{detail.personcode}}</text>
+        </view>
+        <view class="order-custom-name">
+          <text class="info-title">人员名称： </text>
+          <text class="info-answer">{{detail.personname}}</text>
+        </view>
+        <view class="order-custom-name">
+          <text class="info-title">原币金额： </text>
+          <text class="info-answer">{{detail.amount}}</text>
+        </view>
+        <view class="order-custom-name">
+          <text class="info-title">本币金额： </text>
+          <text class="info-answer">{{detail.natamount}}</text>
+        </view>
+        <view class="order-custom-name">
+          <text class="info-title">摘要： </text>
+          <text class="info-answer">{{detail.digest}}</text>
+        </view>
+      </view>
+  </view>
+</view>

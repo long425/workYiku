@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "选择客户",
+  "usingComponents": {
+    "list":"mini-antui/es/list/index",
+    "list-item":"mini-antui/es/list/list-item/index"
+  }
+}

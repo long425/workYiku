@@ -1,0 +1,133 @@
+<view class="page detail-page">
+  <view style="color:#a9a9a9;margin-top:10rpx;margin-bottom: 20rpx;text-align:center;">订单表头</view>
+  <view class="header-card">
+    <view class="card-content">
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">单据号：</text>
+          <text>{{headerData.vreceiptcode}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">制单日期：</text>
+          <text>{{headerData.dmakedate}}</text>
+        </view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-title"><text class="item-type">客户名称：</text><text>{{headerData.customer_name}}</text></view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">部门：</text>
+          <text>{{headerData.dept_name}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">状态：</text>
+          <text>{{headerData.fstatus}}</text>
+        </view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">销售组织：</text>
+          <text>{{headerData.salecorp_name}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">库存组织：</text>
+          <text>{{headerData.calbody_name}}</text>
+        </view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-title"><text class="item-type">开票单位：</text><text>{{headerData.receiptcorp_name}}</text></view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-title"><text class="item-type">收货单位：</text><text>{{headerData.receiptcustomer_name}}</text></view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">制单人：</text>
+          <text>{{headerData.operator_name}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">审批人：</text>
+          <text>{{headerData.approver_name}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style="color:#a9a9a9;margin-top:30rpx;margin-bottom: 20rpx;text-align:center;">订单行</view>
+  <block a:for="{{stockData}}">
+    <view class="header-card">
+    <view class="card-content">
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">存货编码：</text>
+          <text>{{item.inventory_code}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">存货名称：</text>
+          <text>{{item.inventory_name}}</text>
+        </view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">数量：</text>
+          <text>{{item.nnumber}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">单位：</text>
+          <text>{{item.unit_name}}</text>
+        </view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">原币无税单价：</text>
+          <text>{{item.noriginalcurprice}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">原币含税单价：</text>
+          <text>{{item.noriginalcurtaxprice}}</text>
+        </view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">原币无税净价：</text>
+          <text>{{item.noriginalcurnetprice}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">原币含税净价：</text>
+          <text>{{item.noriginalcurtaxnetprice}}</text>
+        </view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">原币税额：</text>
+          <text>{{item.noriginalcurtaxmny}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">税率：</text>
+          <text>{{item.ntaxrate}}</text>
+        </view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">原币无税金额：</text>
+          <text>{{item.noriginalcurmny}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">原币价税合计：</text>
+          <text>{{item.noriginalcursummny}}</text>
+        </view>
+      </view>
+      <view class="card-content-item">
+        <view class="card-date">
+          <text class="item-type">发货日期：</text>
+          <text>{{item.dconsigndate}}</text>
+        </view>
+        <view class="card-money">
+          <text class="item-type">交货日期：</text>
+          <text>{{item.ddeliverdate}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  </block>
+</view>

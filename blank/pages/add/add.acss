@@ -1,0 +1,120 @@
+/*  */
+.page-section {
+  margin-bottom: 5rpx;
+  margin-top: 10rpx;
+}
+
+/* 搜索框 */
+.search-outer {
+  box-sizing: border-box;
+  display:flex;
+  height:40px;
+  overflow:hidden;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  background-color: #efeff4;
+}
+
+.search-outer * {
+  box-sizing: border-box;
+}
+
+.search-input {
+  flex:1;
+  text-align: left;
+  display: block;
+  color: #000;
+  height: 24px;
+  font-size: 15px;
+  background-color: #fff;
+  border-color: transparent;
+}
+
+.search-cancel {
+  margin-right:10px;
+  display: inline-block;
+  opacity: 1;
+  padding-left: 8px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 16px;
+  color: #108ee9;
+  text-align: right;
+}
+/* 搜索框 end */
+.no-result {
+  line-height: 33px;
+  text-align: center;
+  color: #acacac;
+  font-size: 14px;
+}
+
+.scroll-view-item {
+  line-height: 22px;
+  margin-bottom: 5px;
+}
+
+.date-radio {
+  padding: 26rpx;
+}
+
+.date-radio label + label {
+  margin-left: 20rpx;
+}
+
+
+.row {
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+}
+
+.row-title {
+  flex: 1;
+  padding-top: 28rpx;
+  padding-bottom: 28rpx;
+  font-size: 34rpx;
+  color: #000;
+}
+
+.row-extra {
+  flex-basis: initial;
+  font-size: 32rpx;
+  color: #888;
+}
+
+.row-arrow {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 16rpx;
+}
+
+
+
+.add-order-input {
+  text-align: right;
+  background-color: transparent;
+}
+
+.tips-color {
+  margin-left: 20rpx;
+  color: #ccc;
+}
+
+/* 跳转按钮样式 */
+navigator {
+  border: solid 1rpx #e4e4e4;
+  line-height: 35px;
+  padding: 5px 0;
+  box-sizing: border-box;
+  border-radius: 3px;
+  text-align: center;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+  font-size: 16px;
+}
+
+.navigator-hover {
+  background-color: lightskyblue;
+  color: #fff;
+}

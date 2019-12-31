@@ -1,0 +1,105 @@
+page {
+  background-color: #eee;
+  padding: 10rpx 20rpx;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.page-section-demo {
+  padding: 16rpx;
+}
+
+.choose-date-input {
+  width: calc(100% - 20rpx)
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  padding: 0 10rpx;
+}
+
+.row-title {
+  padding-top: 18rpx;
+  padding-bottom: 18rpx;
+  width: 123px;
+  font-size: 16px;
+  color: #000;
+}
+
+.row-extra {
+  flex: 1;
+  flex-basis: initial;
+  font-size: 16px;
+  color: #000;
+}
+
+.card-box {
+  position: relative;
+  padding: 0 10rpx;
+  width: 100%;
+  min-height: 160rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.order-text {
+  display: flex;
+  width: calc(100% - 320rpx);
+  padding: 0 0 0 20rpx;
+  box-sizing: border-box;
+}
+.order-text-staff {
+  display: flex;
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;  
+}
+
+.order-item {
+  line-height: 88rpx;
+}
+
+.order-name,.order-date {
+  flex: 1;
+  flex-basis: initial;
+  overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.buttun-box {
+  position: absolute;
+  right: 60rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 140rpx;
+}
+
+.buttun-box button {
+  margin: 0;
+}
+
+/* 日期颜色 */
+.order-date { color: #aaa; } 
+.order-money { color: #3bc013; }
+/* 审核状态颜色 */
+.status-success { color: #0e9f5f; }
+.status-fail { color: #e93d11; }
+.status-wait { color: #f3c536; }
+
+/* 时间选择器 */
+.time-picker-box {
+  display: flex;
+  justify-content: space-between;
+}
+.page-section {
+  flex: 1;
+  text-align: center;
+}
+.first-time-picker {
+  margin-right: 5rpx;
+}
+.last-time-picker {
+  margin-left: 5rpx;
+}

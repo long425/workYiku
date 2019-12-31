@@ -1,0 +1,7 @@
+.sort-title {
+  text-align: center;
+  font-size: 16px;
+  line-height: 35px;
+  font-weight: 700;
+  color: #0c79e4;
+}

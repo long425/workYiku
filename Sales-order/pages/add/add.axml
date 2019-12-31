@@ -1,0 +1,229 @@
+<view class="page">
+  <form>
+    <!-- <view class="page-section">
+      <view class="page-section-demo">
+        <view class="search-outer">
+          <input
+            class="search-input"
+            placeholder="填写客户名称"
+            value="{{search}}"
+            onFocus="cancelShow"
+            onConfirm="doneSearch"
+            onInput="handleSearch"
+            onBlur="cancelHidden"
+          />
+          <text a:if="{{cancelIsShow}}" class="search-cancel" onTap="clearSearch">取消</text>
+        </view>
+      </view>
+    </view>
+    <view class="page-section" a:if="{{customerResultIsShow}}">
+      <view class="page-section-demo" a:if="{{customerNameArr.length > 0}}">
+        <scroll-view scroll-y="{{true}}" style="max-height: 200px;" onScroll="scroll">
+          <block a:for="{{customerNameArr}}" a:for-index="idx" a:for-item="itemName">
+            <view 
+            class="scroll-view-item bc_blue" 
+            data-code="{{itemName.code}}" 
+            data-name="{{itemName.name}}"
+            onTap="checkCustomer"
+            >{{itemName.name}}</view>
+          </block>
+        </scroll-view>
+      </view>
+      <view a:if="{{noResult}}" class="no-result">未检测到匹配的【客户】</view>
+    </view> -->
+    <view class="page-section">
+      <view class="row" onTap="getCustom">
+        <view class="row-title">客户<text style="color: red;">*</text></view>
+        <view class="row-extra">{{custname}}</view>
+        <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+      </view>
+      <view class="form-line" />
+      <picker onChange="bindObjPickerChange" value="{{arrIndex}}" range="{{branchArr}}" range-key="name">
+        <view class="row">
+          <view class="row-title">部门<text style="color: red;">*</text></view>
+          <view class="row-extra" onTap="getBranch">{{branchArr[arrIndex].name}}</view>
+          <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+        </view>
+      </picker>
+      <view class="form-line" />
+      <view class="form-row">
+        <view class="form-row-label">预发货日期</view>
+        <view class="form-row-content">
+          <input class="input add-order-input" placeholder="请输入" value="{{dpredatebt}}" data-name="dpredatebt" onInput="changeHeaderValue"/>
+        </view>
+      </view>
+      <view class="form-line" />
+      <view class="form-row">
+        <view class="form-row-label">发货地址</view>
+        <view class="form-row-content">
+          <input class="input add-order-input" placeholder="请输入" value="{{sendaddress}}" data-name="sendaddress" onInput="changeHeaderValue"/>
+        </view>
+      </view>
+      <view class="form-line" />
+      <view class="form-row">
+        <view class="form-row-label">联系人</view>
+        <view class="form-row-content">
+          <input class="input add-order-input" placeholder="请输入" value="{{ccusperson}}" data-name="ccusperson" onInput="changeHeaderValue"/>
+        </view>
+      </view>
+      <view class="form-line" />
+      <view class="form-row">
+        <view class="form-row-label">税率</view>
+        <view class="form-row-content">
+          <input class="input add-order-input" placeholder="默认税率16" value="{{taxrate}}" data-name="taxrate" onInput="changeHeaderValue"/>
+        </view>
+      </view>
+      <view class="form-line" />
+      <view class="form-row">
+        <view class="form-row-label">整单金额</view>
+        <view class="form-row-content">
+          <input class="input add-order-input" placeholder="请输入" value="{{sum}}" data-name="sum" onInput="changeHeaderValue"/>
+        </view>
+      </view>
+    </view>
+    
+
+    <block a:for="{{orderLen}}" a:for-index="idx" a:for-item="itemName">
+      <view style="margin-top: 30rpx;">
+      <view style="margin-bottom: 20rpx;margin-left:20rpx;">
+        <text style="color: #ccc;">订单明细({{idx + 1}})</text>
+        <text a:if="{{orderLen.length > 1}}" id="{{idx}}" onTap="deleteOrder" style="float:right;color:red;">删除</text>
+      </view>
+      <view class="page-section">
+        <!-- <view class="form-row">
+          <view class="form-row-label">存货编码<text style="color: red;">*</text></view>
+          <view class="form-row-content">
+            <input name="inventoryname" class="input add-order-input" placeholder="请输入" value="{{itemName.inventorycode}}" data-name="inventorycode" data-hi="{{idx}}" onInput="changeValueData"/>
+          </view>
+        </view>
+        <view class="form-line" /> -->
+        <view class="form-row">
+          <view class="form-row-label">存货名称<text style="color: red;">*</text></view>
+          <view class="form-row-content">
+            <input name="inventoryname" class="input add-order-input" placeholder="选择存货" value="{{itemName.inventoryname}}" data-name="inventoryname" data-hi="{{idx}}" onInput="changeValueData" onFocus="getStock"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="form-row-label"><text style="color: #a9a9a9;">销售单位</text></view>
+          <view class="form-row-content">
+            <input class="input add-order-input"  
+            disabled="true"
+            value="{{itemName.unitname}}" 
+            data-name="unitname"
+            data-hi="{{idx}}" 
+            onInput="changeValueData"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="form-row-label">数量<text style="color: red;">*</text></view>
+          <view class="form-row-content">
+            <input name="quantity" class="input add-order-input" placeholder="请输入" value="{{itemName.quantity}}" data-name="quantity" data-hi="{{idx}}" onInput="changeValueData"/>
+          </view>
+        </view>
+        <!-- <view class="form-line" />
+        <view class="form-row">
+          <view class="form-row-label">件数</view>
+          <view class="form-row-content">
+            <input name="num" class="input add-order-input" placeholder="请输入"value="{{itemName.num}}" data-name="num" data-hi="{{idx}}" onInput="changeValueData"/>
+          </view>
+        </view> -->
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="form-row-label"><text style="color:#a9a9a9;">无税单价</text></view>
+          <view class="form-row-content">
+            <input 
+            style="color: #a9a9a9;"          
+            class="input add-order-input" 
+            value="{{itemName.unitprice}}" 
+            data-name="unitprice" 
+            data-hi="{{idx}}" 
+            onInput="changeValueData"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="form-row-label">含税单价</view>
+          <view class="form-row-content">
+            <input class="input add-order-input" placeholder="请输入" value="{{itemName.taxunitprice}}" data-name="taxunitprice" data-hi="{{idx}}" onInput="changeValueData"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="form-row-label"> <text style="color: #a9a9a9;">无税金额</text></view>
+          <view class="form-row-content">
+            <input 
+            style="color: #a9a9a9;"
+            placeholder="请输入"
+            class="input add-order-input" 
+            value="{{itemName.money}}" 
+            data-name="money" 
+            data-hi="{{idx}}" 
+            onInput="changeValueData"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="form-row-label">价税合计</view>
+          <view class="form-row-content">
+            <input name="sum" class="input add-order-input" placeholder="价税合计" value="{{itemName.sum}}" data-name="sum" data-hi="{{idx}}" onInput="changeValueData"/>
+          </view>
+        </view>
+      </view>
+    </block>
+    
+    <view>
+      <button size="default" type="default" onTap="addNew">增加明细行</button>
+      <button type="primary" size="default" onTap="addOrder">提交</button>
+    </view>
+  </form>
+
+  
+  <view class='mask' a:if="{{modelIsShow}}"></view>
+  <!-- 提示层 -->
+  <view class='board' a:if="{{modelIsShow}}">
+    <view class="stock-search-box">
+      <input class="stock-search" placeholder="输入存货编码/简称"
+        value="{{stockSearchValue}}"
+        onFocus="showStockSearchCancel"
+        onBlur="hideStockSearchCancel"
+        onInput="stockSearchInput"
+        onConfirm="stockSearchDone"
+        />
+        <view a:if="{{stockSearchCancelIsShow}}" class="search-cancel" style="color: #fff;line-height: 45px;" onTap="cancelSearchStock">取消</view>
+    </view>
+    <view class="stock-search-result" a:if="{{stockResultIsShow}}">
+      <scroll-view scroll-y="{{true}}" style="max-height: 200px;" onScroll="scroll" a:if="stockSearchResult.length">
+        <block a:for="{{stockSearchResult}}">
+          <view class="scroll-view-item stock-item" 
+          data-name="{{item.name}}"
+          data-code="{{item.code}}"
+          data-unit="{{item.ccomunitname}}"
+          data-hi="{{currentIndex}}"
+          onTap="checkStock"
+          >{{item.code}}-----------{{item.name}}</view>
+        </block>
+      </scroll-view>
+      <view a:if="{{noStock}}" class="no-result">未检测到匹配的【存货】</view>
+    </view>
+    <view style="margin-top:20rpx;">
+      <scroll-view scroll-y="{{true}}" style="max-height: 330px;" onScroll="scroll">
+        <block a:for="{{stockArr}}">
+          <radio-group class="radio-group" 
+          onChange="checkStock" 
+          data-name="{{item.name}}" 
+          data-code="{{item.code}}" 
+          data-unit="{{item.ccomunitname}}" 
+          data-hi="{{currentIndex}}" 
+          style="margin-bottom: 10px;margin-left: 10px;"
+          >
+            <label class="radio">
+              <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.code}}-----------{{item.name}}
+            </label>
+          </radio-group>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>

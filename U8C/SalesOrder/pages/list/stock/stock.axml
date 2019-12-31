@@ -1,0 +1,29 @@
+<view class="stock-page">
+  <view class="banner" style="height:60rpx">
+    <view class="fake-searchbar" onTap="onSearchBarTap">
+      <icon type="search" size="14" color="#1D1D1D" />
+      <text class="fake-placeholder">搜索想要的查找的客户</text>
+    </view>
+  </view>
+  <view class="list" style="padding-top: 80rpx;">
+    <scroll-view class="list" style="height: calc(100vh - 290rpx);padding: 0rpx;" scroll-y="{{true}}">
+      <view class="page-section" style="margin-bottom: 0rpx;">
+        <view class="page-section-demo">
+          <checkbox-group onChange="onChange" name="libs">
+            <label class="checkbox" a:for="{{items}}" key="label-{{index}}">
+              <checkbox value="{{item.parentvo.invcode}}" checked="{{item.parentvo.checked}}"/>
+              <text class="checkbox-text">{{item.parentvo.invname}}</text>
+            </label>
+          </checkbox-group>
+        </view>
+      </view>
+    </scroll-view>
+    <button type="primary" size="default" onTap="addStockList">提交</button>
+    <block a:for="{{customerNameArr}}" a:for-index="idx" a:for-item="itemName">
+      <list-item arrow="{{true}}" multipleLine="{{false}}" data-code="{{itemName.code}}" data-name="{{itemName.name}}" onClick="checkCustomer" style="display: flex; align-items: center">
+        <text class="component-name">{{itemName.name}}</text>
+        <view class="am-list-brief">{{itemName.code}}</view>
+      </list-item>
+    </block>
+  </view>
+</view>

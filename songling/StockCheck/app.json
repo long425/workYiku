@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/stock-sort/stock-sort",
+    "pages/index/index",
+    "pages/search/search",
+    "pages/stock-detail/stock-detail"
+  ],
+  "window": {
+    "defaultTitle": "库存查询"
+  }
+}

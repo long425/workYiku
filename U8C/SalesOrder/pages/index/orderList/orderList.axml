@@ -1,0 +1,52 @@
+<view>
+  <!-- 订单状态选择器 -->
+  <view class="section" style="background-color:#fff;margin-bottom: 10rpx;padding:10rpx;">
+    <picker onChange="changeOrderState" value="{{arrIndex}}" range="{{stateList}}" range-key="name">
+      <view class="row">
+        <view class="row-title">订单状态：</view>
+        <view class="row-extra" style="text-align: center;">{{stateList[orderState].name}}</view>
+      </view>
+    </picker>
+  </view>
+  <!-- 日期选择器 -->
+  <view class="time-picker-box">
+    <view class="page-section first-time-picker">
+      <view class="page-section-demo">
+        <input class="choose-date-input" placeholder="起始订单日期" onFocus="changeOrderStartDate" value="{{date.start}}"/>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="page-section-demo last-time-picker">
+        <input class="choose-date-input" placeholder="结束订单日期" onFocus="changeOrderEndDate" value="{{date.end}}"/>
+      </view>
+    </view>
+  </view>
+  <view>
+    <scroll-view scroll-y="{{judge.isRoll}}" style="height: calc(100vh - 140px);" onScroll="scroll" a:if="stockSearchResult.length">
+    <block a:for={{orderList}}>
+      <view class="order-card" data-saleId="{{item.parentvo.csaleid}}">
+        <view class="card-content" data-site="{{index}}" data-saleId="{{item.parentvo.csaleid}}" onTap="checkDetail">
+          <view class="card-content-item">
+            <view class="card-title">
+              <text class="item-type">客户名称：</text>
+              <text>{{item.parentvo.customer_name}}</text>
+            </view>  
+          </view>
+          <view class="card-content-item">
+            <view class="card-date">
+              <text class="item-type">制单日期：</text>
+              <text>{{item.parentvo.dmakedate}}</text>
+            </view>
+            <view class="card-money">
+              <text class="item-type">订单金额：</text>
+              <text>{{item.parentvo.nheadsummny}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="card-footer" a:if="{{item.parentvo.fstatus == '1'}}"><button class="verify-btn" type="primary" onTap="checkToVerify" data-saleId="{{item.parentvo.vreceiptcode}}">审核订单</button></view>
+        <view class="card-footer" a:if="{{item.parentvo.fstatus == '2'}}"><button class="verify-btn" type="primary" disabled="true">已审核</button></view>
+      </view>
+    </block>
+    </scroll-view>
+  </view>
+</view>

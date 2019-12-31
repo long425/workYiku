@@ -1,0 +1,20 @@
+<view class="stock-page">
+  <view class="banner" style="height:60rpx">
+    <view class="fake-searchbar" onTap="onSearchBarTap">
+      <icon type="search" size="14" color="#1D1D1D" />
+      <text class="fake-placeholder">搜索想要查询的存货名字</text>
+    </view>
+  </view>
+  <view class="list" style="padding-top: 80rpx">
+      <block a:for="{{stockList}}" a:for-index="idx" a:for-item="itemName">
+        <list-item arrow="{{true}}" multipleLine="{{false}}" scroll-y="{{true}}"
+          data-code="{{itemName.code}}" 
+          data-name="{{itemName.name}}"
+          onClick="checkStock"  
+          style="display: flex; align-items: center">
+          <text class="component-name">{{itemName.name}}</text>
+          <view class="am-list-brief">{{itemName.code}}</view>
+        </list-item>
+      </block>
+  </view>
+</view>

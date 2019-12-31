@@ -1,0 +1,89 @@
+<view>
+  <!-- 日期选择器 -->
+  <view class="time-picker-box">
+    <view class="page-section first-time-picker">
+      <view class="page-section-demo">
+        <input class="choose-date-input" placeholder="起始单据日期" onFocus="changeOrderStartDate" value="{{date.start}}"/>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="page-section-demo last-time-picker">
+        <input class="choose-date-input" placeholder="结束单据日期" onFocus="changeOrderEndDate" value="{{date.end}}"/>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="time-picker-box">
+    <view class="page-section">
+      <view class="page-section-demo" onTap="checkCustom">
+        <input class="choose-date-input" placeholder="选择应收单客商" value="{{custom.name}}" disabled="disabled"/>
+      </view>
+    </view>
+  </view> -->
+  <view>
+    <view a:if="{{orderList.length == 0}}"></view>
+    <block a:if="{{orderList.length > 0}}">
+    <scroll-view scroll-y="{{true}}" style="height: calc(100vh - 100px);margin-top: 16rpx;" onScroll="scroll">
+      <block a:for={{orderList}}>
+        <view class="order-card" data-saleId="{{item.parentvo.csaleid}}">
+          <view class="card-content" data-site="{{index}}" data-saleId="{{item.parentvo.csaleid}}" onTap="checkDetail">
+            <view class="card-content-item">
+              <view class="card-title">
+                <text class="item-type">公司：</text>
+                <text>{{item.parentvo.dwbm_name}}</text>
+              </view>  
+            </view>
+            <view class="card-content-item">
+              <view class="card-title">
+                <text class="item-type">客商：</text>
+                <text>{{item.childrenvo[0].hbbm_name}}</text>
+              </view>  
+            </view>
+            <view class="card-content-item">
+              <view class="card-date">
+                <text class="item-type">原币金额：</text>
+                <text>{{item.parentvo.ybje}}</text>
+              </view>
+              <view class="card-money">  
+                <text class="item-type">本币金额：</text>
+                <text>{{item.parentvo.bbje}}</text>
+              </view>
+            </view>
+            <view class="card-content-item">
+              <view class="card-date">
+                <text class="item-type">单据日期：</text>
+                <text>{{item.parentvo.djrq}}</text>
+              </view>
+              <view class="card-money">
+                <text class="item-type">单据编号：</text>
+                <text>{{item.parentvo.djbh}}</text>
+              </view>
+            </view>
+            <view class="card-content-item">
+              <view class="card-date">
+                <text class="item-type">录入人：</text>
+                <text>{{item.parentvo.lrr_name}}</text>
+              </view>
+              <view class="card-money">
+                <text class="item-type">审核人：</text>
+                <text>{{item.parentvo.shr_name}}</text>
+              </view>
+            </view>
+            <view class="card-content-item">
+              <view class="card-date">
+                <text class="item-type">交易类型：</text>
+                <text>{{item.parentvo.ywbm_name}}</text>
+              </view>
+              <view class="card-money">
+                <text class="item-type">业务流程：</text>
+                <text>{{item.parentvo.xslxbm_name}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="card-footer" a:if="{{item.parentvo.fstatus == '1'}}"><button class="verify-btn" type="primary" onTap="checkToVerify" data-saleId="{{item.parentvo.vreceiptcode}}">审核订单</button></view>
+          <view class="card-footer" a:if="{{item.parentvo.fstatus == '2'}}"><button class="verify-btn" type="primary" disabled="true">已审核</button></view>
+        </view>
+      </block>
+    </scroll-view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,123 @@
+<view class="addnew-page page">
+    <scroll-view scroll-y="{{true}}" style="height: calc(100vh - 180rpx);">
+  <!-- 销售订单表头 -->
+  <view class="page-section">
+    <view class="row" onTap="getCustom">
+      <view class="row-title">客户
+        <text style="color: red;">*</text></view>
+      <view class="row-extra">{{company.cusname}}</view>
+      <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+    </view>
+    <view class="form-line" />
+    <view class="row" onTap="getBranch">
+      <view class="row-title">部门
+        <text style="color: red;">*</text></view>
+      <view class="row-extra">{{company.deptname}}</view>
+      <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="row-title">预发货日期</view>
+      <view class="row-extra" onTap="showDateTime">
+        <input class="input add-order-input" placeholder="请输入" value="{{orderHeader.dpredatebt}}" data-name="dpredatebt" onInput="changeHeaderValue"/>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="row-title">发货地址</view>
+      <view class="row-extra">
+        <input class="input add-order-input" placeholder="请输入" value="{{orderHeader.sendaddress}}" data-name="sendaddress" onInput="changeHeaderValue"/>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="row-title">联系人</view>
+      <view class="row-extra">
+        <input class="input add-order-input" placeholder="请输入" value="{{orderHeader.ccusperson}}" data-name="ccusperson" onInput="changeHeaderValue"/>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="row-title">税率</view>
+      <view class="row-extra">
+        <input class="input add-order-input" placeholder="默认税率16" value="{{orderHeader.taxrate}}" data-name="taxrate" onInput="changeHeaderValue"/>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="row-title">整单金额</view>
+      <view class="row-extra">
+        <input class="input add-order-input" value="{{orderHeader.sum}}" data-name="sum"/>
+      </view>
+    </view>
+  </view>
+  <!-- 销售订单存货明细行 -->
+  <block a:for="{{stockList}}" a:for-index="idx" a:for-item="itemName">
+    <view style="margin-top: 30rpx;">
+      <view style="margin-bottom: 20rpx;margin-left:20rpx;">
+        <text style="color: #ccc;">订单明细({{idx + 1}})</text>
+        <text id="{{idx}}" onTap="deleteOrder" style="float:right;color:red;">删除</text>
+      </view>
+      <view class="page-section">
+        <view class="form-row">
+          <view class="row-title">存货名称
+            <text style="color: red;">*</text></view>
+          <view class="row-extra">
+            <input name="inventoryname" class="input add-order-input" placeholder="选择存货" value="{{itemName.inventoryname}}" data-name="inventoryname" data-hi="{{idx}}" onInput="changeValueData" onFocus="getStock"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="row-title">
+            <text>销售单位</text></view>
+          <view class="row-extra">
+            <input class="input add-order-input" disabled="true" value="{{itemName.unitname}}" data-name="unitname" data-hi="{{idx}}" onInput="changeValueData"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="row-title">数量
+            <text style="color: red;">*</text></view>
+          <view class="row-extra">
+            <input name="quantity" class="input add-order-input" placeholder="请输入" value="{{itemName.quantity}}" data-name="quantity" data-hi="{{idx}}" onInput="changeStockValue"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="row-title">
+            <text>无税单价</text></view>
+          <view class="row-extra">
+            <input class="input add-order-input" placeholder="请输入" value="{{itemName.unitprice}}" data-name="unitprice" data-hi="{{idx}}" onInput="changeStockValue"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="row-title">含税单价</view>
+          <view class="row-extra">
+            <input class="input add-order-input" placeholder="请输入" value="{{itemName.taxunitprice}}" data-name="taxunitprice" data-hi="{{idx}}" onInput="changeStockValue"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="row-title">
+            <text>无税金额</text></view>
+          <view class="row-extra">
+            <input placeholder="请输入" class="input add-order-input" value="{{itemName.money}}" data-name="money" data-hi="{{idx}}" onInput="changeValueData"/>
+          </view>
+        </view>
+        <view class="form-line" />
+        <view class="form-row">
+          <view class="row-title">价税合计</view>
+          <view class="row-extra">
+            <input name="sum" class="input add-order-input" value="{{itemName.sum}}" data-name="sum" data-hi="{{idx}}" onInput="changeValueData"/>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  </scroll-view>
+  <view class="buttonBox">
+    <button class="addnew-button" size="default" type="default" onTap="addNew">增加明细行</button>
+    <button class="addnew-button" type="primary" size="default" onTap="addNewSaleOrder">提交</button>
+  </view>
+</view>

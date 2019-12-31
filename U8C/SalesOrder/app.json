@@ -1,0 +1,40 @@
+{
+  "pages": [
+    
+    "pages/index/addNew/addNew",
+    "pages/index/orderList/orderList",
+    "pages/list/customers/customers",
+    "pages/list/stock/stock",
+    "pages/list/branch/branch",
+    "pages/search/customer/customer",
+    "pages/detail/order/order",
+    "pages/detail/stock/stock",
+    "pages/search/stock/stock",
+    "pages/list/teamSale/teamSale",
+    "pages/list/teamStock/teamStock",
+    "pages/list/typeSale/typeSale"
+  ],
+  "window": {
+    "defaultTitle": "U8C销售订单",
+    "titleBarColor": "#fff"
+  },
+  "tabBar": {
+    "textColor": "#dddddd",
+    "selectedColor": "#49a9ee",
+    "backgroundColor": "#ffffff",
+    "items": [
+      {
+        "pagePath": "pages/index/addNew/addNew",
+        "icon": "image/icon_API.png",
+        "activeIcon": "image/icon_API_HL.png",
+        "name": "新增订单"
+      },
+      {
+        "pagePath": "pages/index/orderList/orderList",
+        "icon": "image/icon_component.png",
+        "activeIcon": "image/icon_component_HL.png",
+        "name": "订单列表"
+      }
+    ]
+  }
+}

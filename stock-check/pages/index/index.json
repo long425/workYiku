@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "库存查询",
+  "usingComponents": {
+    "list":"mini-antui/es/list/index",
+    "list-item":"mini-antui/es/list/list-item/index"
+  }
+}

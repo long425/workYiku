@@ -1,0 +1,87 @@
+<view class="page">
+  <view class="page-section">
+    <view class="form-row">
+      <view class="form-row-label">单据编号</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderDetail.code}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">单据日期</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderDetail.date}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">销售类型</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderDetail.typename}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">客户简称</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderDetail.cusabbname}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">销售部门</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderDetail.deptname}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">联系人</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderDetail.ccusperson}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">联系电话</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderDetail.cofficephone}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">业务员</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderDetail.maker}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">发货地址</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderDetail.sendaddress}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">合计金额</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{moneyAll}}</text>
+      </view>
+    </view>
+  </view>
+  <block a:if="{{saleOrderRow.length > 0}}">
+    <view style="color:#a9a9a9;margin-top:10rpx;margin-left: 30rpx;">订单行</view>
+    <view class="page-section">
+      <block a:for="{{saleOrderRow}}">
+      <view class="form-row" onTap="checkOrderRowDetail" data-rowId="{{item.inventorycode}}" data-index="{{index}}">
+        <view class="form-row-label">{{item.inventorycode}}</view>
+        <view class="form-row-content" style="text-align: right;">
+          <text>{{item.inventoryname}}</text>
+        </view>
+      </view>
+      <view class="form-line" />
+      </block> 
+    </view>
+  </block>
+</view>

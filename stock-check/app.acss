@@ -1,0 +1,169 @@
+page {
+  background-color: #F7F7F7;
+  box-sizing: border-box;
+}
+
+.page {
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+  font-size: 24rpx;
+  padding: 32rpx;
+  flex: 1;
+}
+
+.page-description {
+  margin-bottom: 32rpx;
+}
+
+.page-section {
+  background: #fff;
+  margin-bottom: 32rpx;
+}
+
+.page-section-title {
+  padding: 16rpx 32rpx;
+}
+
+.page-section-demo {
+  padding: 32rpx;
+}
+
+.page-section-btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.page-section-btns > view {
+  flex: 1;
+  height: 84rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #49a9ee;
+}
+
+button {
+  margin-top:20rpx;
+  margin-bottom:20rpx;
+}
+
+.bc_blue {
+  background-color: #49A9EE;
+}
+
+.bc_red {
+  background-color: #F04134;
+}
+
+.bc_yellow {
+  background-color: #FFBF00;
+}
+
+.bc_green {
+  background-color: #00A854;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  height: 88rpx;
+  align-items: center;
+}
+
+.form-row-label {
+  width: 180rpx;
+  font-size: 34rpx;
+  margin-right: 10rpx;
+  text-align: left;
+  color: #000;
+}
+
+.form-row-content {
+  flex: 1;
+  font-size: 34rpx;
+}
+
+.form-line {
+  height: 1px;
+  background-color: #ddd;
+  margin-left: 30rpx;
+}
+
+/* 弹出框样式 */
+.mask {
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:998;
+  width:100%;
+  height:100%;
+  background-color:#000;
+  opacity:0.5;
+  overflow:hidden;
+}
+.board {
+  position:fixed;
+  border-radius:12px;
+  background-color:#fff;
+  top:25%;
+  left:7.2%;
+  width:85.6%;
+  height:330px;
+  z-index:999;
+}
+.logo {
+  display:block;
+  color:#000;
+  font-size:16px;
+  font-weight:700;
+  text-align:center;
+  padding-top:5.4%;
+  margin: 0 auto;
+}
+.qrcode {
+  margin-top:3%;
+  width: 76%;
+  margin-left:12%;
+  text-align:center
+}
+.display-none {
+  display: none;
+}
+
+.stock-search-box {
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  width: 100%;
+  height: 45px;
+  background-color: #1890ff;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+.stock-search {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  box-sizing: border-box;
+  margin-top: 8px; 
+  border-radius: 5px;
+  flex: 1;
+}
+.stock-search-result {
+  /* background-color: #ddd; */
+  padding: 10rpx 30rpx;
+  margin: 10rpx 0 30rpx 0;
+  font-size: 14px;
+  text-align: center;
+}
+.stock-item {
+  color: #fff;
+  background-color: #1890ff;
+  margin-bottom: 10rpx;
+}
+.button-box {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+}

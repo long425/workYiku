@@ -1,0 +1,59 @@
+<view class="page">
+  <view class="page-section">
+    <view class="form-row">
+      <view class="form-row-label">存货编码</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderRow.inventorycode}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">存货名称</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderRow.inventoryname}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">销售单位</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderRow.unitname}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">数量</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderRow.quantity}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">单价</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderRow.unitprice}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">含税单价</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderRow.taxunitprice}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">无税金额</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderRow.money}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">价税合计</view>
+      <view class="form-row-content" style="text-align: right;">
+        <text>{{saleOrderRow.sum}}</text>
+      </view>
+    </view>
+  </view>
+</view>

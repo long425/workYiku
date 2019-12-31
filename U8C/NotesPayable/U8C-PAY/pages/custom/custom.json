@@ -1,0 +1,10 @@
+{
+  "defaultTitle": "客商查找",
+  "transparentTitle": "none",
+  "allowsBounceVertical": "NO",
+  "usingComponents": {
+    "search-bar": "mini-antui/es/search-bar/index",
+    "list":"mini-antui/es/list/index",
+    "list-item":"mini-antui/es/list/list-item/index"
+  }
+}

@@ -1,0 +1,83 @@
+<view class="ledger-page page">
+  <view class="screen-chunk">
+    <view class="date-screen">
+      <view class="date-start" onTap="screenStart">
+        <input placeholder="开始日期" class="date-text" disabled="true" value="{{date.start}}"/>
+      </view>
+      <view class="date-end" onTap="screenEnd">
+        <input placeholder="结束日期" class="date-text" disabled="true" value="{{date.end}}"/>
+      </view>
+    </view>
+    <view class="custom-screen" onTap="screenCustom">
+      <input placeholder="选择客户" class="custom-text" disabled="true" value='{{custom.name}}'/>
+    </view>
+  </view>
+  <scroll-view class="order-list" scroll-y="{{true}}" onScroll="scroll">
+    <block a:if="{{noResult}}">
+      <view class="order-item" style="text-align: center;font-size: 18px;color: red;">未查到相应的应收单据</view>
+    </block>
+    <block a:for="{{orderList}}" a:else>
+      <view class="order-item" onTap="checkItem" data-code="{{item.code}}">
+        <view class="order-custom-name">
+          <text class="info-title">应收单据号： </text>
+          <text class="info-answer">{{item.code}}</text>
+        </view>
+        <view class="code-sum">
+          <view class="custom-code">
+            <text class="info-title">单据日期： </text>
+            <text class="info-answer">{{item.date}}</text>
+          </view>
+          <view class="custom-money">
+            <text class="info-title">单据状态： </text>
+            <text class="info-answer">{{item.state}}</text>
+          </view>
+        </view>
+        <view class="code-sum">
+          <view class="custom-code">
+            <text class="info-title">客商编码： </text>
+            <text class="info-answer">{{item.cust_vendor_code}}</text>
+          </view>
+          <view class="custom-money">
+            <text class="info-title">客商名称： </text>
+            <text class="info-answer">{{item.cusname}}</text>
+          </view>
+        </view>
+        <view class="code-sum" a:if="{{item.deptcode}}">
+          <view class="custom-code">
+            <text class="info-title">部门编码： </text>
+            <text class="info-answer">{{item.deptcode}}</text>
+          </view>
+          <view class="custom-money">
+            <text class="info-title">部门名称： </text>
+            <text class="info-answer">{{item.deptname}}</text>
+          </view>
+        </view>
+        <view class="code-sum" a:if="{{item.personcode}}">
+          <view class="custom-code">
+            <text class="info-title">人员编码： </text>
+            <text class="info-answer">{{item.personcode}}</text>
+          </view>
+          <view class="custom-money">
+            <text class="info-title">人员名称： </text>
+            <text class="info-answer">{{item.personname}}</text>
+          </view>
+        </view>
+        <view class="code-sum">
+          <view class="custom-code">
+            <text class="info-title">本币金额： </text>
+            <text class="info-answer">{{item.natamount}}</text>
+          </view>
+          <view class="custom-money">
+            <text class="info-title">原币金额： </text>
+            <text class="info-answer">{{item.amount}}</text>
+          </view>
+        </view>
+        <view class="order-custom-name" a:if="{{item.digest}}">
+          <text class="info-title">摘要： </text>
+          <text class="info-answer">{{item.digest}}</text>
+        </view>
+      </view>
+    </block>
+    
+  </scroll-view>
+</view>

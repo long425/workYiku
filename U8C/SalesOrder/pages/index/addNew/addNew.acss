@@ -1,0 +1,56 @@
+.addnew-page {
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: hidden;
+}
+/*  */
+.page-section {
+  margin-bottom: 5rpx;
+  margin-top: 10rpx;
+}
+/* 明细行 */
+
+.row {
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+}
+
+.row-title {
+  flex: auto;
+  padding-top: 28rpx;
+  padding-bottom: 28rpx;
+  font-size: 34rpx;
+  color: #000;
+}
+
+.row-extra {
+  flex-basis: initial;
+  font-size: 32rpx;
+  color: #888;
+}
+
+.row-arrow {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 16rpx;
+}
+
+.add-order-input {
+  text-align: right;
+  background-color: transparent;
+}
+
+.tips-color {
+  margin-left: 20rpx;
+  color: #ccc;
+}
+
+.buttonBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.addnew-button {
+  flex: 0 1 300rpx;
+}
